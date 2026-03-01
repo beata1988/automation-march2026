@@ -9,11 +9,11 @@ export class DeliveryDetails {
         this.page = page
         //add the variables to the constructor
       
-        this.firstName = page.getByRole('textbox', { name: 'First name' })
-        this.lastName = page.getByRole('textbox', { name: 'Last name' })
-        this.street = page.getByRole('textbox', { name: 'Street' })
-        this.postCode = page.getByRole('textbox', { name: 'Post code' })
-        this.city = page.getByRole('textbox', { name: 'City' })
+        this.firstName = page.locator('[data-qa="delivery-first-name"]')
+        this.lastName = page.locator('[data-qa="delivery-last-name"]')
+        this.street = page.locator('[data-qa="delivery-address-street"]')
+        this.postCode = page.locator('[data-qa="delivery-postcode"]')
+        this.city = page.locator('[data-qa="delivery-city"]')
         this.country = page.getByRole('combobox')
         this.saveAddressButton = page.getByRole('button', { name: 'Save address for next time' })
         this.addressContainer = page.locator('[data-qa="saved-address-container"]')
