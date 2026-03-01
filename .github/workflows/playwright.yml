@@ -9,14 +9,19 @@ jobs:
         image: mcr.microsoft.com/playwright:v1.56.1-jammy
     steps:
       - name: Check repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Say hello
         run: echo hello
       - name: Run tests
         run: |
-          echo "Start the shopping store application"
+
+          echo "Start the shopping store application" 
           chmod +x ./shopping-store-linux-amd64 &
+          echo "Wait for the ci to run"
+          sleep 5
           echo "Install dependencies from lockfile"
           npm ci
+          echo "verifying the port is working"
+          curl -I http://localhost:2221
           echo "Run playwright tests"
           npm run test:ci
