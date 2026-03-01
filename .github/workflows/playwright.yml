@@ -16,7 +16,7 @@ jobs:
         run: |
 
           echo "Start the shopping store application" 
-          chmod +x ./shopping-store-linux-amd64 &
+          chmod +x ./shopping-store-linux-arm &
           echo "Wait for the ci to run"
           sleep 5
           echo "Install dependencies from lockfile"
