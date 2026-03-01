@@ -1,0 +1,5 @@
+        
+        
+        // WE NEED TO RANDOMIZE THE USERS TO AUTOMATE the users and ids, use https://www.npmjs.com/ to find the npm package
+        // then install the package
+        //then import hte package to the file example register page  import { v4 as uuidv4 } from 'uuid';
