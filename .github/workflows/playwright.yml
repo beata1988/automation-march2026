@@ -18,6 +18,9 @@ jobs:
           echo "Start the shopping store application" 
           chmod +x ./shopping-store-linux-amd64
           ./shopping-store-linux-amd64 --version || ldd ./shopping-store-linux-amd64
+          echo "segundo plano"
+          # El '&' es vital para que GitHub pase al siguiente comando
+          ./shopping-store-linux-amd64 &
           echo "Wait for the ci to run"
           sleep 5
           echo "Install dependencies from lockfile"
