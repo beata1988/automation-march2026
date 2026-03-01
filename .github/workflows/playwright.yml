@@ -15,13 +15,13 @@ jobs:
       - name: Run tests
         run: |
 
-          echo "Start the shopping store application" 
-          chmod +x ./shopping-store-linux-amd64 
-          echo "2. Verificando el tipo de archivo (Debug)..."
-          ls -l ./shopping-store-linux-amd64
-          file ./shopping-store-linux-amd64
-          echo "3. Arrancando la aplicación correctamente..."
-          # Primero ejecutamos, LUEGO ponemos el & al final de la línea de ejecución
+          echo "1. Verificando cabecera del archivo..."
+          # Esto nos dirá si el archivo empieza con 'ELF' (que es lo correcto)
+          head -c 4 ./shopping-store-linux-amd64
+          
+          echo -e "\n2. Intentando ejecución directa..."
+          # Usamos 'sh' para intentar forzar la ejecución si el shell tiene dudas
+          chmod +x ./shopping-store-linux-amd64
           ./shopping-store-linux-amd64 &
 
           echo "Wait for the ci to run"
